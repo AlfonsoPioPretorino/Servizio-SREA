@@ -1,0 +1,56 @@
+<head>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/SREA ICON.ico') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="{{url_for('static', filename='settings.js')}}"></script>
+  <title>SREA - Carica Foto</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="line-height: 50px; margin-left: 20px;">
+      <ul class="navbar-nav mr-auto">            
+          <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+            <img src="{{ url_for('static', filename='/img/SREA ICON.png')}}" style="max-width:80px; margin-top: -7px;">
+            <img style="max-width:100px; margin-top: -7px;">
+          </a>
+          <li class="nav-item">
+            <a class="nav-link" href="/" style="color: white !important;">← Torna alla home</a>
+          </li>
+          <li class="nav-item" >
+              <a class="nav-link" href="/uploader" style="color: white !important;">Analisi via Foto</a>
+          </li>
+          <li class="nav-item">
+            <a href="/webcam" class="nav-link"style="color: white !important;">Analisi via Webcam</a>
+          </li>
+          <li class="nav-item">
+            <a href="/settings" class="nav-link"style="color: white !important;"><u>Impostazioni</u></a>
+        </li>
+      </ul>
+  </div> 
+</nav>
+<body style="background-color: #F0F0F0 ">
+  <center style="margin-top: 5%">
+    <h2>Servizio SREA</h2>
+        <h4>Impostazioni</h4>
+        <p>Frame analizzati al secondo:</p>
+        <p><span style="color: red;"><i>Attenzione!</i></span> Utilizzare la funzionalità con cautala e solo se si è in possesso di hardware apposito.</p>
+        <input step="1" id="fpslider" form="forms" type="range" class="form-range" min="1" max="30" value="{{FAS}}" oninput="this.nextElementSibling.value = this.value">
+        <output id="fpslidershow">{{FAS}}</output>
+        <br><br>
+        <button onclick="update()" class="btn btn-success" type=submit value=Upload>Salva impostazioni</button>
+       
+  </center>
+
+
+  <footer class="bg-light text-center text-lg-start " style="position:absolute;bottom:0;left:0;width:100%;">
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-primary text-white">
+      © 2022 Copyright:
+      <a class="text-white">I Tre Moschettoni</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+</body>
+

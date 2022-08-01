@@ -1,0 +1,55 @@
+<head>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/SREA ICON.ico') }}">
+  <link rel="stylesheet" href="{{url_for('static', filename='uploader.css')}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="{{url_for('static', filename='uploader.js')}}"></script>
+  <title>SREA - Carica Foto</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="line-height: 50px; margin-left: 20px;">
+      <ul class="navbar-nav mr-auto">            
+          <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+            <img src="{{ url_for('static', filename='/img/SREA ICON.png')}}" style="max-width:80px; margin-top: -7px;">
+            <img style="max-width:100px; margin-top: -7px;">
+          </a>
+          <li class="nav-item">
+            <a class="nav-link" href="/" style="color: white !important;">← Torna alla home</a>
+          </li>
+          <li class="nav-item" >
+              <a class="nav-link" href="/uploader" style="color: white !important;"><u>Analisi via Foto</u></a>
+          </li>
+          <li class="nav-item">
+            <a href="/webcam" class="nav-link"style="color: white !important;">Analisi via Webcam</a>
+          </li>
+          <li class="nav-item">
+            <a href="/settings" class="nav-link"style="color: white !important;">Impostazioni</a>
+        </li>
+      </ul>
+  </div> 
+</nav>
+<body style="background-color: #F0F0F0" onload="modalerror({{flag}})">
+  <center style="margin-top: 5%">
+    <h2>Servizio SREA</h2>
+    <h5 style="margin-top: 2%">Trascina o seleziona una foto/video da far analizzare</h5>
+    <div style="margin: 5%;">
+      <form class="form" method=post enctype=multipart/form-data >
+        <input name=file type="file"  required >
+        <p>Trascina il tuo file o clicca in questa area.</p>
+        <button class="btn btn-success" type=submit value=Upload>Analizza</button>
+      </form>
+    </div>
+  </center>
+  <footer class="bg-light text-center text-lg-start " style="position:absolute;bottom:0;left:0;width:100%;">
+    <!-- Copyright -->
+    <div class="text-center p-3 bg-primary text-white">
+      © 2022 Copyright:
+      <a class="text-white">I Tre Moschettoni</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+</body>
+

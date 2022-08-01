@@ -1,0 +1,56 @@
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/SREA ICON.ico') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.min.js"></script>
+    <title>Servizio SREA</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="line-height: 50px; margin-left: 20px;">
+        <ul class="navbar-nav mr-auto">            
+            <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+              <img src="{{ url_for('static', filename='/img/SREA ICON.png')}}" style="max-width:80px; margin-top: -7px;">
+              <img style="max-width:100px; margin-top: -7px;">
+            </a>
+            <li class="nav-item">
+              <a class="nav-link" href="/" style="color: white !important;">← Torna alla home</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" href="/uploader" style="color: white !important;">Analisi via Foto</a>
+            </li>
+            <li class="nav-item">
+                <a href="/webcam" class="nav-link"style="color: white !important;"><u>Analisi via Webcam</u></a>
+            </li>
+            <li class="nav-item">
+                <a href="/settings" class="nav-link"style="color: white !important;">Impostazioni</a>
+            </li>
+        </ul>
+    </div> 
+  </nav>
+
+  <body style="background-color: #F0F0F0" onload="setFrameSentPerSecond('{{FAS}}')">
+    <center style="margin-top: 5%">
+        <h2>Servizio SREA</h2>
+        <div style="margin-top: 5%; margin-left: 25%;">
+            <div style="float: left; width: 30%; height: 30%;display: inline ">
+                <video id="video" width="320" height="240" autoplay ></video>
+                <canvas id="framecanvas" width="320" height="240" hidden></canvas>
+            </div>
+        </div>
+        
+        <!--SPAZIO PE LE STATISTICHE LASCIARE VUOTO. POPOLAMENTO FATTO DA JS A RUNTIME-->
+        <div id="stats" style="float: right; margin-right: 30%;">
+            
+        </div>
+    </center>
+    <footer class="bg-light text-center text-lg-start " style="position:absolute;bottom:0;left:0;width:100%;">
+        <!-- Copyright -->
+        <div class="text-center p-3 bg-primary text-white">
+          © 2022 Copyright:
+          <a class="text-white">I Tre Moschettoni</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    
+</body>
+<script src="{{url_for('static', filename='live_webcam.js')}}"></script>
